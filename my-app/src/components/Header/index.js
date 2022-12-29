@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
 const Header = () => (
   <>
-    <p>Feeedback</p>
-    <p>Help</p>
-    <p>About</p>
+    <Link to="/feedback">
+      <p>Feeedback</p>
+    </Link>
+    <Link to="/help">
+      <p>Help</p>
+    </Link>
+    <Link to="about">
+      <p>About</p>
+    </Link>
   </>
 );
 export default Header;
