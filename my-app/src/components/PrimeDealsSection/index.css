@@ -1,0 +1,17 @@
+.prime-deals-image {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.prime-deals-image-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.primedeals-container {
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+}
+.primedeals-section-success-view-container {
+  padding-left: 50px;
+}

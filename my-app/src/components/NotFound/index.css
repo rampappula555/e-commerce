@@ -1,0 +1,10 @@
+.notfound-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 810px;
+}
+.notfound-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

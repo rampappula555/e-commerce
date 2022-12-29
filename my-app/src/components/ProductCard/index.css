@@ -1,0 +1,38 @@
+.eachproduct-image {
+  width: 170px;
+}
+.product-title {
+  font-size: large;
+}
+.rating {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  margin: 0;
+}
+.rating-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 110px;
+}
+.star-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0967d2;
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+}
+.productcard-container {
+  margin-bottom: 25px;
+}
+.product-text-details-container {
+  padding-right: 90px;
+}
+.products-link {
+  text-decoration: none;
+  color: blue;
+}

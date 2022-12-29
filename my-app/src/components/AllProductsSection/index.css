@@ -1,0 +1,30 @@
+.allproducts-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.allproducts-section-container {
+  padding-left: 50px;
+  padding-right: 30px;
+}
+.loader-container {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 170px;
+}
+.failure-view-image-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+.noproducts-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  padding-left: 450px;
+}

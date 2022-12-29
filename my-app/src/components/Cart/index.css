@@ -1,0 +1,27 @@
+.remove-all-button-container {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 27px;
+  padding-right: 50px;
+  align-items: center;
+}
+.cart-main-container {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.remove-all-button {
+  padding: 7px;
+  border: none;
+  background-color: #0b69ff;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  border-radius: 3px;
+}
+.no-cart-item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 130px;
+}

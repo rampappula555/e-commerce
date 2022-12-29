@@ -1,0 +1,40 @@
+.homepage-clothes-heading {
+  font-size: 70px;
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 140px;
+}
+.home-page-text-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 580px;
+}
+.home-page-text {
+  line-height: 27px;
+  font-size: 17px;
+}
+.shopnow-button {
+  padding: 10px;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  background-color: #0b69ff;
+  color: white;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.homepage-image {
+  width: 460px;
+}
+.homepage-main-container {
+  padding-left: 80px;
+  padding-right: 80px;
+}

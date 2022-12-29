@@ -1,0 +1,27 @@
+.products-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 110px;
+  position: sticky;
+  top: 0;
+  background-color: white;
+}
+.sortby-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 360px;
+}
+.price-text {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.input-heading-container {
+  display: flex;
+  align-items: center;
+}
+.allproducts-heading {
+  margin-left: 10px;
+  font-size: 24px;
+}
