@@ -34,7 +34,12 @@ const CartSummary = (props) => {
               />
             </div>
             <p>Ordered Placed</p>
-            <button onClick={onClickContinueShopping}>Continue Shopping</button>
+            <button
+              onClick={onClickContinueShopping}
+              className="shopnow-button"
+            >
+              Continue Shopping
+            </button>
           </div>
         )}
       </div>
