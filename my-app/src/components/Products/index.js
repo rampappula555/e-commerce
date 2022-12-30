@@ -7,6 +7,10 @@ import { AiOutlineArrowDown } from "react-icons/ai";
 import { useState } from "react";
 const Products = () => {
   const [isScroll, setIsScroll] = useState(false);
+  console.log(isScroll);
+  sjcnuyfsel iutnawyliutaw
+  cernawtakunvte
+  scrtjnsyeti
   const onClickTopButton = () => {
     if (isScroll) {
       window.scrollTo(0, 0);
