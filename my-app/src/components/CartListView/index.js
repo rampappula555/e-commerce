@@ -6,31 +6,8 @@ import "./index.css";
 
 const CartListView = () => {
   const value = useContext(CartContext);
-  // const [updatedArray, setUpdatedArray] = useState([]);
   const { updatedArray, increaseCartItem, decreaseCartItem, onClickDelete } =
     value;
-
-  // useEffect(() => {
-  //   let temp = [];
-  //   let sortedArray = [];
-  //   cartList.map((eachItem) => {
-  //     if (temp.includes(eachItem.id)) {
-  //       for (let i in sortedArray) {
-  //         if (sortedArray[i].id === eachItem.id) {
-  //           sortedArray.splice(i, 1, {
-  //             ...eachItem,
-  //             quantity: sortedArray[i].quantity + eachItem.quantity,
-  //           });
-  //         }
-  //       }
-  //     } else {
-  //       sortedArray.push(eachItem);
-  //       temp.push(eachItem.id);
-  //     }
-  //     return null;
-  //   });
-  //   setUpdatedArray(sortedArray);
-  // }, [cartList]);
 
   const onClickDecrease = (id) => {
     const decresedResult = updatedArray.map((eachItem) => {

@@ -14,8 +14,6 @@ const Products = () => {
       window.scrollTo(0, document.body.scrollHeight);
     }
   };
-  // const onClickBottomButton = () =>
-  //   window.scrollTo(0, document.body.scrollHeight);
 
   window.addEventListener("scroll", () => {
     if (window.scrollY >= 500) {
@@ -26,20 +24,9 @@ const Products = () => {
   });
   return (
     <div>
-      {/* <div className="blur"> */}
       <Header />
-      {/* <button onClick={onClickBottomButton}>go to bottm</button> */}
       <PrimeDealsSection />
-
       <AllProductsSection />
-      {/* {isScroll && (
-        <div className="go-to-top-button">
-          <button className="top-button" onClick={onClickTopButton}>
-            <MdArrowUpward className="top-button-image" />
-          </button>
-        </div>
-      )} */}
-      {/* </div> */}
 
       <div className="go-to-top-button">
         <button className="top-button" onClick={onClickTopButton}>
