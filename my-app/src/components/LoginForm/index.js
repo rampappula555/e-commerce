@@ -27,7 +27,7 @@ const LoginForm = () => {
 
     if (response.ok) {
       Cookies.set("jwt_token", data.jwt_token, { expires: 30 });
-      navigate("/");
+      navigate("/", { replace: true });
     } else if (response.ok === false) {
       setErrorMessage(data.error_msg);
       setShowErrorMessage(true);
@@ -35,7 +35,7 @@ const LoginForm = () => {
   };
   const jwtToken = Cookies.get("jwt_token");
   if (jwtToken !== undefined) {
-    return <Navigate to="/" />;
+    return <Navigate to="/" replace />;
   }
 
   return (

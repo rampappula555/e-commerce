@@ -19,7 +19,7 @@ const Header = () => {
   const onClickYesButton = () => {
     Cookies.remove("jwt_token");
 
-    navigate("/login");
+    navigate("/login", { replace: true });
   };
   useEffect(() => {
     let handler = (event) => {

@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import LoginForm from "./components/LoginForm";
 import Home from "./components/Home";
 import Cart from "./components/Cart";
@@ -11,7 +11,7 @@ import ProductItemDetails from "./components/ProductItemDetails";
 import CartContext from "./context/CartContext";
 import NoInternetConnection from "./components/NoInternet";
 const App = () => {
-  const parsedCartList = JSON.parse(localStorage.getItem("cart_list"));
+  const parsedCartList = JSON.parse(sessionStorage.getItem("cart_list"));
   const [cartList, setcartList] = useState(
     parsedCartList === null ? [] : parsedCartList
   );
@@ -45,7 +45,7 @@ const App = () => {
   const decreaseCartItem = (product) => setcartList([...product]);
   const onClickDelete = (product) => setcartList([...product]);
   useEffect(() => {
-    localStorage.setItem("cart_list", JSON.stringify(cartList));
+    sessionStorage.setItem("cart_list", JSON.stringify(cartList));
   }, [cartList]);
 
   return (
@@ -74,7 +74,8 @@ const App = () => {
                 element={<ProductItemDetails />}
               />
             </Route>
-            <Route path="*" element={<NotFound />} />
+            <Route path="/not-found" element={<NotFound />} />
+            <Route path="*" element={<Navigate replace to="/not-found" />} />
           </Routes>
         </BrowserRouter>
       </CartContext.Provider>
