@@ -1,11 +1,12 @@
 import "./index.css";
 import Cookies from "js-cookie";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { BiShow } from "react-icons/bi";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const userNameRef = useRef();
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +34,10 @@ const LoginForm = () => {
       setShowErrorMessage(true);
     }
   };
+  useEffect(() => userNameRef.current.focus(), []);
+
   const jwtToken = Cookies.get("jwt_token");
+
   if (jwtToken !== undefined) {
     return <Navigate to="/" replace />;
   }
@@ -65,6 +69,7 @@ const LoginForm = () => {
                 id="username"
                 type="text"
                 value={username}
+                ref={userNameRef}
               />
               <br />
               <label htmlFor="password">PASSWORD</label>
