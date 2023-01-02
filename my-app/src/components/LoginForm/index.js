@@ -1,6 +1,6 @@
 import "./index.css";
 import Cookies from "js-cookie";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { BiShow } from "react-icons/bi";
 
@@ -12,6 +12,7 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  useEffect(() => console.log(showPassword), [showPassword]);
   const onChangeUsername = (event) => setUserName(event.target.value);
   const onChangePassword = (event) => setPassword(event.target.value);
   const onClickShowPassword = () => setShowPassword((prevState) => !prevState);
@@ -80,6 +81,7 @@ const LoginForm = () => {
                   <button
                     className="show-password-icon-btn"
                     onClick={onClickShowPassword}
+                    type="button"
                   >
                     <BiShow />
                   </button>
