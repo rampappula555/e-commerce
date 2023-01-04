@@ -4,7 +4,7 @@ import Header from "../Header";
 import PrimeDealsSection from "../PrimeDealsSection";
 import AllProductsSection from "../AllProductsSection";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const Products = () => {
   const [isScroll, setIsScroll] = useState(false);
   const onClickTopButton = () => {
@@ -14,14 +14,18 @@ const Products = () => {
       window.scrollTo(0, document.body.scrollHeight);
     }
   };
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY >= 500) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY >= 500) {
-      setIsScroll(true);
-    } else {
-      setIsScroll(false);
-    }
-  });
   return (
     <div>
       <Header />

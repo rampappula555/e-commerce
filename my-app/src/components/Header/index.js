@@ -31,7 +31,7 @@ const Header = () => {
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
-  });
+  }, []);
 
   return (
     <div className="header-container">
@@ -55,7 +55,11 @@ const Header = () => {
             <span className="cart-count">{updatedArray.length}</span>
           ) : null}
         </Link>
-        <button className="logout-button" onClick={onClickLogout}>
+        <button
+          title="logout"
+          className="logout-button"
+          onClick={onClickLogout}
+        >
           Logout
         </button>
         {!isOnClick ? null : (
