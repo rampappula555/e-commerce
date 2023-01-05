@@ -36,11 +36,13 @@ const Header = () => {
   return (
     <div className="header-container">
       <div>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-          className="header-website-logo"
-          alt="img"
-        />
+        <Link to="/">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+            className="header-website-logo"
+            alt="img"
+          />
+        </Link>
       </div>
       <div className="header-buttons-container">
         <Link to="/" className="link">
