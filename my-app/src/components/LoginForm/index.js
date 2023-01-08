@@ -6,7 +6,7 @@ import { BiShow } from "react-icons/bi";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const userNameRef = useRef();
+  const userNameRef = useRef(null);
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");

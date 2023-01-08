@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const navigate = useNavigate();
-  let logoutRef = useRef();
+  let logoutRef = useRef(null);
   const value = useContext(CartContext);
   const { updatedArray } = value;
   const [isOnClick, setIsOnClick] = useState(false);
@@ -23,15 +23,21 @@ const Header = () => {
   };
   useEffect(() => {
     let handler = (event) => {
-      if (logoutRef.current) {
-        if (!logoutRef.current.contains(event.target)) {
-          setIsOnClick(false);
-        }
+      if (logoutRef.current && !logoutRef.current.contains(event.target)) {
+        setIsOnClick(false);
       }
     };
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isOnClick) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "initial";
+    }
+  }, [isOnClick]);
 
   return (
     <div className="header-container">
@@ -72,6 +78,7 @@ const Header = () => {
                 <button
                   className="yes-button button"
                   onClick={onClickYesButton}
+                  autoFocus
                 >
                   Yes
                 </button>
