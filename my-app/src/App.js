@@ -63,19 +63,18 @@ const App = () => {
       >
         <BrowserRouter>
           <Routes>
-            <Route extact path="/login" element={<LoginForm />} />
+            <Route path="/login" element={<LoginForm />} />
             <Route element={<ProtectedRoutes />}>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/products" element={<Products />} />
-              <Route exact path="/cart" element={<Cart />} />
-              <Route
-                exact
-                path="/product/:id"
-                element={<ProductItemDetails />}
-              />
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/product/:id" element={<ProductItemDetails />} />
             </Route>
             <Route path="/not-found" element={<NotFound />} />
-            <Route path="*" element={<Navigate replace to="/not-found" />} />
+            <Route
+              path="*"
+              element={<Navigate replace={true} to="/not-found" />}
+            />
           </Routes>
         </BrowserRouter>
       </CartContext.Provider>

@@ -34,12 +34,16 @@ const LoginForm = () => {
       setShowErrorMessage(true);
     }
   };
-  useEffect(() => userNameRef.current.focus(), []);
+  useEffect(() => {
+    if (userNameRef.current) {
+      userNameRef.current.focus();
+    }
+  }, []);
 
   const jwtToken = Cookies.get("jwt_token");
 
   if (jwtToken !== undefined) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/" replace={true} />;
   }
 
   return (
