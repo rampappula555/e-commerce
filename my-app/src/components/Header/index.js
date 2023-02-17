@@ -9,7 +9,7 @@ const Header = () => {
   const navigate = useNavigate();
   let logoutRef = useRef(null);
   const value = useContext(CartContext);
-  const { updatedArray } = value;
+  const { cartList } = value;
   const [isOnClick, setIsOnClick] = useState(false);
 
   const onClickLogout = () => {
@@ -59,8 +59,8 @@ const Header = () => {
         </Link>
         <Link to="/cart" className="link cart-link">
           Cart
-          {updatedArray.length > 0 ? (
-            <span className="cart-count">{updatedArray.length}</span>
+          {cartList.length > 0 ? (
+            <span className="cart-count">{cartList.length}</span>
           ) : null}
         </Link>
         <button

@@ -6,10 +6,10 @@ import { BiShow } from "react-icons/bi";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const userNameRef = useRef(null);
+  const logInButtonRef = useRef(null);
 
-  const [username, setUserName] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUserName] = useState("rahul");
+  const [password, setPassword] = useState("rahul@2021");
   const [errorMessage, setErrorMessage] = useState("");
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -35,8 +35,8 @@ const LoginForm = () => {
     }
   };
   useEffect(() => {
-    if (userNameRef.current) {
-      userNameRef.current.focus();
+    if (logInButtonRef.current) {
+      logInButtonRef.current.focus();
     }
   }, []);
 
@@ -73,7 +73,6 @@ const LoginForm = () => {
                 id="username"
                 type="text"
                 value={username}
-                ref={userNameRef}
               />
               <br />
               <label htmlFor="password">PASSWORD</label>
@@ -96,7 +95,11 @@ const LoginForm = () => {
                 </div>
               )}
               <br />
-              <button className="login-button" type="submit">
+              <button
+                className="login-button"
+                type="submit"
+                ref={logInButtonRef}
+              >
                 Login
               </button>
 

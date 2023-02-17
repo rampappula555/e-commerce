@@ -6,11 +6,10 @@ import "./index.css";
 
 const CartListView = () => {
   const value = useContext(CartContext);
-  const { updatedArray, increaseCartItem, decreaseCartItem, onClickDelete } =
-    value;
+  const { cartList, increaseCartItem, decreaseCartItem, onClickDelete } = value;
 
   const onClickDecrease = (id) => {
-    const decresedResult = updatedArray.map((eachItem) => {
+    const decresedResult = cartList.map((eachItem) => {
       if (eachItem.id === id) {
         if (eachItem.quantity > 1) {
           return { ...eachItem, quantity: eachItem.quantity - 1 };
@@ -23,7 +22,7 @@ const CartListView = () => {
   };
 
   const onClickIncrease = (id) => {
-    const increasedResult = updatedArray.map((eachItem) => {
+    const increasedResult = cartList.map((eachItem) => {
       if (eachItem.id === id) {
         return { ...eachItem, quantity: eachItem.quantity + 1 };
       }
@@ -31,19 +30,19 @@ const CartListView = () => {
     });
     increaseCartItem(increasedResult);
   };
-  const cartLength = updatedArray.length;
+  const cartLength = cartList.length;
 
-  const totalPrice = updatedArray.map(
+  const totalPrice = cartList.map(
     (eachItem) => eachItem.quantity * eachItem.price
   );
   const flag = totalPrice.reduce((prev, acc) => prev + acc, 0);
   const onClickDeleteItem = (id) => {
-    const filteredRes = updatedArray.filter((eachItem) => eachItem.id !== id);
+    const filteredRes = cartList.filter((eachItem) => eachItem.id !== id);
     onClickDelete(filteredRes);
   };
   return (
     <div>
-      {updatedArray.map((eachItem) => (
+      {cartList.map((eachItem) => (
         <CartListItem
           eachItem={eachItem}
           key={eachItem.id}

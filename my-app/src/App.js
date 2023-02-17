@@ -15,31 +15,31 @@ const App = () => {
   const [cartList, setcartList] = useState(
     parsedCartList === null ? [] : parsedCartList
   );
-  const [updatedArray, setupdatedArray] = useState([]);
-  useEffect(() => {
-    let temp = [];
-    let sortedArray = [];
-    cartList.map((eachItem) => {
-      if (temp.includes(eachItem.id)) {
-        for (let i in sortedArray) {
-          if (sortedArray[i].id === eachItem.id) {
-            sortedArray.splice(i, 1, {
-              ...eachItem,
-              quantity: sortedArray[i].quantity + eachItem.quantity,
-            });
-          }
-        }
-      } else {
-        sortedArray.push(eachItem);
-        temp.push(eachItem.id);
-      }
-      return null;
-    });
-    setupdatedArray(sortedArray);
-  }, [cartList]);
 
-  const addtoCart = (product) =>
-    setcartList((prevState) => [...prevState, product]);
+  const addtoCart = (product) => {
+    setcartList((prevState) => {
+      const duplicateProductIndex = prevState.findIndex((eachProduct) => {
+        if (eachProduct.id === product.id) {
+          return true;
+        } else {
+          return false;
+        }
+      });
+      if (duplicateProductIndex !== -1) {
+        const duplicateProduct = prevState.slice(
+          duplicateProductIndex,
+          duplicateProductIndex + 1
+        );
+        prevState.splice(duplicateProductIndex, 1, {
+          ...duplicateProduct[0],
+          quantity: duplicateProduct[0].quantity + product.quantity,
+        });
+        return [...prevState];
+      } else {
+        return [...prevState, product];
+      }
+    });
+  };
   const deletecartList = () => setcartList([]);
   const increaseCartItem = (product) => setcartList([...product]);
   const decreaseCartItem = (product) => setcartList([...product]);
@@ -53,7 +53,7 @@ const App = () => {
       <CartContext.Provider
         value={{
           cartList,
-          updatedArray,
+
           addtoCart: addtoCart,
           deletecartList: deletecartList,
           decreaseCartItem: decreaseCartItem,
