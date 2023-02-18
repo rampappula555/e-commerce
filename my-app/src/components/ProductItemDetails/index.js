@@ -18,11 +18,20 @@ const ProductItemDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const value = useContext(CartContext);
-  const { addtoCart } = value;
+  const { addtoCart, cartList } = value;
   const [apiStatus, setApiStatus] = useState(apiStatusConsts.initial);
   const [quantity, setQuantity] = useState(1);
   const [eachProductdetails, setEachProductDetails] = useState({});
   const [isClickedAddToCart, setisClickedAddToCart] = useState(false);
+  const x = cartList.filter(
+    (eachProduct) => eachProduct.id === eachProductdetails.id
+  );
+  let z = false;
+  if (x.length > 0) {
+    if (x[0].id === eachProductdetails.id) {
+      z = true;
+    }
+  }
   useEffect(() => {
     setApiStatus(apiStatusConsts.progress);
     const getProductDetails = async () => {
@@ -78,13 +87,11 @@ const ProductItemDetails = () => {
   };
   const onClickAddToCart = () => {
     setisClickedAddToCart(true);
-    if (isClickedAddToCart === false) {
-      addtoCart({ ...eachProductdetails, quantity });
-    }
 
-    if (isClickedAddToCart) {
-      navigate("/cart");
-    }
+    addtoCart({ ...eachProductdetails, quantity });
+  };
+  const onClickGoToCart = () => {
+    navigate("/cart");
   };
   const onClickIncreaseQuantity = () =>
     setQuantity((prevState) => prevState + 1);
@@ -122,7 +129,7 @@ const ProductItemDetails = () => {
             <p>Availability: {availability}</p>
             <p>Brand: {brand}</p>
             <div className="line"></div>
-            {isClickedAddToCart ? (
+            {isClickedAddToCart || z ? (
               <div className="added-to-cart-text">
                 <p>ADDED TO CART</p>
               </div>
@@ -133,9 +140,15 @@ const ProductItemDetails = () => {
                 <button onClick={onClickIncreaseQuantity}>+</button>
               </div>
             )}
-            <button onClick={onClickAddToCart} className="add-to-cart-button">
-              {isClickedAddToCart ? "GO TO CART" : "ADD TO CART"}
-            </button>
+            {isClickedAddToCart || z ? (
+              <button onClick={onClickGoToCart} className="add-to-cart-button">
+                GO TO CART
+              </button>
+            ) : (
+              <button onClick={onClickAddToCart} className="add-to-cart-button">
+                ADD TO CART
+              </button>
+            )}
           </div>
         </div>
       </div>
