@@ -1,7 +1,6 @@
 import { AiOutlineStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "./index.css";
-import LazyLoad from "react-lazyload";
 const ProductCard = (props) => {
   const { eachProduct } = props;
   const { title, imageUrl, price, brand, rating, id } = eachProduct;
@@ -9,9 +8,7 @@ const ProductCard = (props) => {
     <div className="productcard-container">
       <Link className="products-link" to={`/product/${id}`}>
         <div>
-          <LazyLoad>
-            <img src={imageUrl} alt="img" className="eachproduct-image" />
-          </LazyLoad>
+          <img src={imageUrl} alt="img" className="eachproduct-image" />
         </div>
         <div className="product-text-details-container">
           <h1 className="product-title">{title}</h1>

@@ -3,7 +3,6 @@ import Cookies from "js-cookie";
 import { useEffect, useState } from "react";
 import { LineWave } from "react-loader-spinner";
 import ProductCard from "../ProductCard";
-import LazyLoad from "react-lazyload";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -77,64 +76,52 @@ const PrimeDealsSection = () => {
     <div className="prime-deals-image-container">
       <Slider {...settings}>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
         <div>
-          <LazyLoad>
-            <img
-              loading="lazy"
-              src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
-              className="prime-deals-image"
-              alt="img"
-            />
-          </LazyLoad>
+          <img
+            loading="lazy"
+            src="https://assets.ccbp.in/frontend/react-js/exclusive-deals-banner-img.png"
+            className="prime-deals-image"
+            alt="img"
+          />
         </div>
       </Slider>
     </div>
