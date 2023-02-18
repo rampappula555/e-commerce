@@ -15,7 +15,6 @@ const App = () => {
   const [cartList, setcartList] = useState(
     parsedCartList === null ? [] : parsedCartList
   );
-
   const addtoCart = (product) => {
     setcartList((prevState) => {
       const duplicateProductIndex = prevState.findIndex((eachProduct) => {
